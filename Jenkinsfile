@@ -1,10 +1,11 @@
-
 pipeline {
     agent any
     stages {
-        stage('Hola') {
+        stage('Ejecutar Tests') {
             steps {
-                echo 'El Pipeline esta conectado correctamente'
+                // Solo ejecuta los tests. 
+                // Asume que las dependencias ya están en la carpeta.
+                bat 'npx playwright test'
             }
         }
     }
