@@ -3,9 +3,8 @@ pipeline {
     stages {
         stage('Ejecutar Tests') {
             steps {
-                // Solo ejecuta los tests. 
-                // Asume que las dependencias ya están en la carpeta.
-                bat 'npx playwright test'
+                // Usamos la ruta que confirmaste
+                bat '"C:\\Program Files\\nodejs\\npx.cmd" playwright test'
             }
         }
     }
