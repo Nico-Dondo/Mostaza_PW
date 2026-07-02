@@ -9,11 +9,16 @@ pipeline {
             }
         }
 
+        stage('Instalar navegadores Playwright') {
+            steps {
+                bat 'npx playwright install'
+            }
+        }
+
         stage('Ejecutar Tests') {
             steps {
                 bat 'npx playwright test'
             }
         }
-
     }
 }
