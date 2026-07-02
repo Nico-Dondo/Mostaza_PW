@@ -1,11 +1,19 @@
 pipeline {
     agent any
+
     stages {
-        stage('Ejecutar Tests') {
+
+        stage('Instalar dependencias') {
             steps {
-                // Usamos la ruta que confirmaste
-                bat '"C:\\Program Files\\nodejs\\npx.cmd" playwright test'
+                bat 'npm install'
             }
         }
+
+        stage('Ejecutar Tests') {
+            steps {
+                bat 'npx playwright test'
+            }
+        }
+
     }
 }
